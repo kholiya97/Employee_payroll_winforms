@@ -1,0 +1,15 @@
+C:\Users\kholi\source\repos\Employee_Payroll\Employee_Payroll\bin\Debug\netcoreapp3.1\Employee_Payroll.exe
+C:\Users\kholi\source\repos\Employee_Payroll\Employee_Payroll\bin\Debug\netcoreapp3.1\Employee_Payroll.deps.json
+C:\Users\kholi\source\repos\Employee_Payroll\Employee_Payroll\bin\Debug\netcoreapp3.1\Employee_Payroll.runtimeconfig.json
+C:\Users\kholi\source\repos\Employee_Payroll\Employee_Payroll\bin\Debug\netcoreapp3.1\Employee_Payroll.runtimeconfig.dev.json
+C:\Users\kholi\source\repos\Employee_Payroll\Employee_Payroll\bin\Debug\netcoreapp3.1\Employee_Payroll.dll
+C:\Users\kholi\source\repos\Employee_Payroll\Employee_Payroll\bin\Debug\netcoreapp3.1\Employee_Payroll.pdb
+C:\Users\kholi\source\repos\Employee_Payroll\Employee_Payroll\obj\Debug\netcoreapp3.1\Employee_Payroll.csprojAssemblyReference.cache
+C:\Users\kholi\source\repos\Employee_Payroll\Employee_Payroll\obj\Debug\netcoreapp3.1\Employee_Payroll.Form1.resources
+C:\Users\kholi\source\repos\Employee_Payroll\Employee_Payroll\obj\Debug\netcoreapp3.1\Employee_Payroll.csproj.GenerateResource.cache
+C:\Users\kholi\source\repos\Employee_Payroll\Employee_Payroll\obj\Debug\netcoreapp3.1\Employee_Payroll.AssemblyInfoInputs.cache
+C:\Users\kholi\source\repos\Employee_Payroll\Employee_Payroll\obj\Debug\netcoreapp3.1\Employee_Payroll.AssemblyInfo.cs
+C:\Users\kholi\source\repos\Employee_Payroll\Employee_Payroll\obj\Debug\netcoreapp3.1\Employee_Payroll.csproj.CoreCompileInputs.cache
+C:\Users\kholi\source\repos\Employee_Payroll\Employee_Payroll\obj\Debug\netcoreapp3.1\Employee_Payroll.dll
+C:\Users\kholi\source\repos\Employee_Payroll\Employee_Payroll\obj\Debug\netcoreapp3.1\Employee_Payroll.pdb
+C:\Users\kholi\source\repos\Employee_Payroll\Employee_Payroll\obj\Debug\netcoreapp3.1\Employee_Payroll.genruntimeconfig.cache
