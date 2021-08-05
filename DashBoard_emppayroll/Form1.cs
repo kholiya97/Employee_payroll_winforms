@@ -1,30 +1,36 @@
 ﻿using System;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace Employee_Payroll
 {
     public partial class Form1 : Form
     {
+        string path = @"Data Source=LAPTOP-BM4J1NMI;Initial Catalog=EMPLOYEE_PAYROLLWIN;Integrated Security=True";
+        SqlConnection connection;
+        SqlCommand command;
+        public string Gender, profileimage;
         public Form1()
         {
             InitializeComponent();
+            connection = new SqlConnection(path);
         }
 
       
       
 
-        private void IDtextBox_Leave(object sender, EventArgs e)
-        {
-            if(string.IsNullOrEmpty(IDtextBox.Text))
-            {
-                IDtextBox.Focus();
-                errorProvider1.SetError(this.IDtextBox, "please enter ID...!!");
-            }
-            else
-            {
-                errorProvider1.Clear();
-            }
-        }
+        //private void IDtextBox_Leave(object sender, EventArgs e)
+        //{
+        //    if(string.IsNullOrEmpty(IDtextBox.Text))
+        //    {
+        //        IDtextBox.Focus();
+        //        errorProvider1.SetError(this.IDtextBox, "please enter ID...!!");
+        //    }
+        //    else
+        //    {
+        //        errorProvider1.Clear();
+        //    }
+        //}
 
         private void NAME_textBox_Leave(object sender, EventArgs e)
         {
@@ -153,9 +159,14 @@ namespace Employee_Payroll
             }
         }
 
+        
+        
+      
+        
+        
         private void RESET_button_Click(object sender, EventArgs e)
         {
-            IDtextBox.Clear();
+            //IDtextBox.Clear();
             NAME_textBox.Clear();
             DESIG_textBox.Clear();
             BASICPAY_textBox.Clear();
@@ -167,6 +178,100 @@ namespace Employee_Payroll
 
         }
 
-      
+        private void Submit_button_Click(object sender, EventArgs e)
+        {
+            if (NAME_textBox.Text == "")
+            {
+                MessageBox.Show("Please Fill All Feild");
+            }
+            else
+            {
+                try
+                {
+
+                    if (M_GENDER.Checked == true)
+                    {
+                        Gender = "Male";
+                    }
+                    else if (F_GENDER.Checked == true)
+                    {
+                        Gender = "Female";
+                    }
+                    else if (O_GENDER.Checked == true)
+                    {
+                        Gender = "others";
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please select a gender");
+                    }
+                    if (profilepic1.Checked)
+                    {
+                        profileimage = "1";
+                    }
+                    else if (profilepic2.Checked)
+                    {
+                        profileimage = "2";
+                    }
+                    else if (profilepic3.Checked)
+                    {
+                        profileimage = "3";
+                    }
+                    else if(profilepic4.Checked)
+                    {
+                        profileimage = "4";
+                    }
+                    else if (profilepic5.Checked)
+                    {
+                        profileimage = "5";
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please select a Profile pic");
+                    }
+                    connection.Open();
+                    SqlCommand command = new SqlCommand("AddEmployee", this.connection);
+                    command.CommandType = System.Data.CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@NAME", NAME_textBox.Text);
+                    command.Parameters.AddWithValue("@GENDER", Gender);
+                    command.Parameters.AddWithValue("@PROFILE_pic", profileimage);
+                    command.Parameters.AddWithValue("@START_DATE", dateTimePicker1.Value);
+                    command.Parameters.AddWithValue("@DESIGNATION", DESIG_textBox.Text);
+                    command.Parameters.AddWithValue("@BASIC_PAY", BASICPAY_textBox.Text);
+                    command.Parameters.AddWithValue("@MEDICAL_ALLOWANCE", M_textBox.Text);
+                    command.Parameters.AddWithValue("@HOUSERENT_ALLOWANCE", HR_textBox.Text);
+                    command.Parameters.AddWithValue("@GROSS_PAY", GROSS_textBox.Text);
+                    command.Parameters.AddWithValue("@NET_SALARY", NS_textBox.Text);
+                    command.Parameters.AddWithValue("@INCOME_TAX", TAX_textBox.Text);
+                    command.Parameters.AddWithValue("@NOTES", notes_txt.Text);
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                    MessageBox.Show("FORM SUBMITTED SUCESSFULLY");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+
+        //if(dateTimePicker1.Checked==true)
+        //{
+        //    MessageBox.Show(dateTimePicker1.Value.ToString());
+        //}
+        //else
+        //{
+        //    MessageBox.Show("Please select date ");
+        //}
+
     }
+//                catch (Exception ex)
+//                {
+//                    MessageBox.Show(ex.Message);
+//                }
+
+//            }
+//        }
+//    }
 }
